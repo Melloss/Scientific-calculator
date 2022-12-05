@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="stylesheet/scientificCalculator.css">
+</head>
+
+<body id="body">
+    <div class="menu" id="menu">
+        <ul>
+            <li><button><img src="image/15.png"> setting</button></li>
+            <li><button><img src="image/16.png"> report bug</button></li>
+            <li><button><img src="image/17.png"> contact us</button></li>
+            <li><button><img src="image/18.png"> help</button></li>
+            <li><button><img src="image/19.png"> advanced</button></li>
+            <li><button><img src="image/20.png"> date</button></li>
+        </ul>
+    </div>
+    <div class="container" id="container">
+        <div class="upper">
+            <div class="icon-bar">
+                <div class="icon">
+                    <button onclick="menu()"><img src="image/7.png" ><span id="std">Standard</span></button>
+                </div>
+                <div class="logo">
+                    <img src="image/12.png" id="logoImg">
+                </div>
+            </div>
+            <div class="screen" id="screen">
+
+            </div>
+        </div>
+        <div class="buuton-filed" id="button-fild">
+            <div class="function-buttons">
+                <div class="row1">
+                    <button name="mc" class="mini-buttons">MC</button>
+                    <button name="mr" class="mini-buttons">MR</button>
+                    <button name="m+" class="mini-buttons">M+</button>
+                    <button name="m-" class="mini-buttons">M-</button>
+                    <button name="ms" class="mini-buttons">MS</button>
+                    <button name="mc" class="mini-buttons">MC<sup>.</sup></button>
+                </div>
+            </div>
+            <div class="button-area">
+                <div class="operator-button">
+                    <div class="row2">
+                        <button name="modulo" calss="large-button" onclick="append('%')">%</button>
+                        <button name="ce" calss="large-button" onclick="backSpace()">CE</button>
+                        <button name="ac" calss="large-button" onclick="clean()">AC</button>
+                        <button name="division" calss="large-button" onclick="append('/')">/</button>
+                    </div>
+                </div>
+                <div class="number-button">
+                    <div class="row3">
+                        <button name="number" class="large-button" onclick="append(7)">7</button>
+                        <button name="number" class="large-button" onclick="append(8)">8</button>
+                        <button name="number" class="large-button" onclick="append(9)">9</button>
+                        <button name="number" class="large-button" onclick="append('x')">X</button>
+                    </div>
+                    <div class="row4">
+                        <button name="number" class="large-button" onclick="append(4)">4</button>
+                        <button name="number" class="large-button" onclick="append(5)">5</button>
+                        <button name="number" class="large-button" onclick="append(6)">6</button>
+                        <button name="number" class="large-button" onclick="append('-')">-</button>
+                    </div>
+                    <div class="row5">
+                        <button name="number" class="large-button" onclick="append(1)">1</button>
+                        <button name="number" class="large-button" onclick="append(2)">2</button>
+                        <button name="number" class="large-button" onclick="append(3)">3</button>
+                        <button name="number" class="large-button" onclick="append('+')">+</button>
+                    </div>
+                    <div class="row6">
+                        <button name="number" class="large-button histry">HISTRY</button>
+                        <button name="number" class="large-button" onclick="append(0)">0</button>
+                        <button name="number" class="large-button" onclick="append('.')">.</button>
+                        <button name="number" class="large-button">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="changeColor()">click to change color</button>
+    <script>
+        var ele = 1;
+        var menuOpen = 0;
+        var menu = () => {
+            if (!menuOpen) {
+                var div = document.getElementById("menu");
+                div.style.transition = "display 3s";
+                div.style.display = "block";
+                div = document.getElementById("container");
+                div.style.transition = "3s";
+                div.style.margin = "20px auto 20px 0";
+                menuOpen = 1;
+            } else {
+                var div = document.getElementById("menu");
+                div.style.display = "none";
+                div = document.getElementById("container");
+                div.style.margin = "20px auto";
+                menuOpen = 0;
+            }
+        }
+        var backSpace = () => {
+            var div = document.getElementById("screen");
+            var arr = Array.from(div.innerHTML);
+            arr.pop();
+            var str = arr.join("");
+            div.innerHTML = str;
+        }
+        var clean = () => {
+            var div = document.getElementById("screen");
+            div.innerHTML = "";
+        }
+        var append = (msg) => {
+            var div = document.getElementById("screen");
+            div.style.color = "rgba(156, 87, 147, 0.9)";
+            div.innerHTML += msg;
+        }
+        var changeColor = () => {
+            var div = document.getElementById("container");
+            if (ele == 1) {
+                div.style.backgroundColor = "rgba(255,255,255,.7)";
+                div = document.getElementById("std");
+                div.style.color = "rgb(39, 37, 37)";
+                ele = 0;
+            } else {
+                div.style.backgroundColor = "rgb(39, 37, 37)";
+                div = document.getElementById("std");
+                div.style.color = "rgba(255,255,255,.7)";
+                ele = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

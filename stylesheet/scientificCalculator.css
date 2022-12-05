@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    transition: .5s;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, .6);
+    background-image: url("../image/2.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    margin: 20px auto;
+    width: fit-content;
+    height: auto;
+    padding: 3px;
+    background-color: rgb(39, 37, 37);
+    border-radius: 30px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, .5);
+    background-attachment: fixed;
+}
+
+.icon-bar {
+    width: auto;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icon button {
+    background: transparent;
+    margin: 3px;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    /*one*/
+}
+
+.icon button img {
+    /*this i removed the background color of this element*/
+    background-blend-mode: multiply;
+    height: 40px;
+    width: auto;
+    border-radius: 20px 0 20px 0;
+    filter: invert(100%);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    margin-top: 5px;
+    filter: invert(100%);
+}
+
+.screen {
+    width: 23rem;
+    min-height: 200px;
+    position: relative;
+    box-shadow: 0 5px 5px 0 rgb(0, 0, 0);
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-size: larger;
+    color: #fff;
+}
+
+.buuton-filed {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 5px;
+}
+
+.function-buttons .row1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.function-buttons .row1 button {
+    margin: 2px 0;
+    background: transparent;
+    width: 16.6%;
+    color: rgb(119, 116, 116);
+    /*two*/
+    border: none;
+    font-size: 18px;
+}
+
+.function-buttons .row1 button:hover {
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, .3);
+}
+
+.button-area div div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-area div div button {
+    width: 25%;
+    height: 40px;
+    margin: 2px;
+    border: none;
+    background: transparent;
+    color: white;
+    /*three*/
+    box-shadow: 1px 0 7px 5px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+.button-area div div button:hover {
+    background-color: rgba(12, 12, 12, 0.7);
+    box-shadow: 0 0 0 0 #000;
+}
+
+.button-area .operator-button div button {
+    color: rgba(255, 255, 255, .5);
+    /*four*/
+}
+
+.button-area .number-button .row6 .histry {
+    font-size: 18px;
+}
+
+body .menu {
+    margin: 40px 0;
+    margin-left: auto;
+    margin-right: 5px;
+    height: fit-content;
+    padding: 10px;
+    background-attachment: fixed;
+    line-height: 30px;
+    background-color: rgb(39, 37, 37);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, .5);
+    border-radius: 30px 0 30px 30px;
+    transition: all 5s;
+    display: none;
+}
+
+body .menu button {
+    width: fit-content;
+    margin: 3px;
+    padding: 3px;
+    background-color: transparent;
+    color: rgba(184, 122, 28, 0.9);
+    border: none;
+    border: 0.5px solid rgba(255, 255, 255, .6);
+    border-radius: 5px;
+    display: flex;
+}
+
+body .menu button:hover {
+    background-color: rgba(255, 255, 255, .3);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .4);
+    border: none;
+    transform: 3.5s;
+}
+
+body .menu button img {
+    width: 20px;
+    margin: 2px;
+    height: auto;
+    filter: invert(100%);
+}
