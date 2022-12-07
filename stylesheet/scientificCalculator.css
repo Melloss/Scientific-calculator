@@ -77,7 +77,10 @@ body {
     border-radius: 0 0 10px 10px;
     text-align: center;
     font-size: larger;
-    color: #fff;
+    background-color: rgb(39, 37, 37);
+    color: rgba(156, 87, 147, 0.9);
+    border-width: 0px;
+    
 }
 
 .buuton-filed {
@@ -183,4 +186,7 @@ body .menu button img {
     margin: 2px;
     height: auto;
     filter: invert(100%);
+}
+#history{
+    color: white;
 }
