@@ -5,7 +5,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: normal;
     font-size: 17px;
-    transition: .5s;
+    transition: .3s;
 }
 
 body {
@@ -13,22 +13,21 @@ body {
     height: auto;
     margin: 0;
     padding: 0;
-    background-color: rgba(0, 0, 0, .6);
-    background-image: url("../image/2.jpg");
+    background-color: #141414;
+    /*background-image: url("../image/2.jpg");
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     display: flex;
     flex-direction: row;
 }
 
 .container {
-    margin: 20px auto;
-    width: fit-content;
+    margin: 80px auto;
+    width: 24rem;
     height: auto;
-    padding: 3px;
-    background-color: rgb(39, 37, 37);
+    background-color: #191919;
     border-radius: 30px;
     box-shadow: 0 0 15px 10px rgba(0, 0, 0, .5);
     background-attachment: fixed;
@@ -36,11 +35,12 @@ body {
 
 .icon-bar {
     width: auto;
-    margin: 10px;
+    margin: 25px 20px;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .icon button {
@@ -49,6 +49,10 @@ body {
     margin-top: 10px;
     border: none;
     color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
     /*one*/
 }
 
@@ -60,9 +64,13 @@ body {
     border-radius: 20px 0 20px 0;
     filter: invert(100%);
 }
+.std{
+    font-size: 900px;
+    font-family: tahoma;
+}
 
 .logo img {
-    height: 50px;
+    height: 40px;
     width: auto;
     border-radius: 50%;
     margin-top: 5px;
@@ -70,14 +78,14 @@ body {
 }
 
 .screen {
-    width: 23rem;
+    width: 100%;
     min-height: 200px;
     position: relative;
-    box-shadow: 0 5px 5px 0 rgb(0, 0, 0);
+    box-shadow: 0 10px 10px -8px rgb(0 0 0);
     border-radius: 0 0 10px 10px;
     text-align: center;
     font-size: larger;
-    background-color: rgb(39, 37, 37);
+    background-color: #191919;
     color: rgba(156, 87, 147, 0.9);
     border-width: 0px;
     
@@ -87,13 +95,16 @@ body {
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 5px;
+    padding: 15px;
 }
 
+.function-buttons{
+    padding: 7px 0;
+}
 .function-buttons .row1 {
     width: 100%;
     height: auto;
-    display: flex;
+    display: flex;  
     flex-direction: row;
     justify-content: space-around;
 }
@@ -105,7 +116,11 @@ body {
     color: rgb(119, 116, 116);
     /*two*/
     border: none;
+    cursor: pointer;
     font-size: 18px;
+}
+#mc{
+  
 }
 
 .function-buttons .row1 button:hover {
@@ -121,21 +136,29 @@ body {
 }
 
 .button-area div div button {
-    width: 25%;
-    height: 40px;
-    margin: 2px;
+    width: 100%;
+    padding: 15px;
+    margin: 10px;
     border: none;
     background: transparent;
     color: white;
     /*three*/
     box-shadow: 1px 0 7px 5px rgba(0, 0, 0, .2);
-    border-radius: 7px;
+    border-radius: 4px;
     font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.button-area div div button:hover {
+.button-area div div button:hover{
     background-color: rgba(12, 12, 12, 0.7);
-    box-shadow: 0 0 0 0 #000;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.button-area div div button:active {
+    background-color: rgba(12, 12, 12, 0.7);
+    box-shadow: 0 0 0px 0px rgba(0, 0, 0, 1);
+
 }
 
 .button-area .operator-button div button {
@@ -146,9 +169,14 @@ body {
 .button-area .number-button .row6 .histry {
     font-size: 18px;
 }
+#equal-sign{
+    background-color: #A160FB;
+   
+}
 
-body .menu {
-    margin: 40px 0;
+
+.menu {
+    margin: 80px 0;
     margin-left: auto;
     margin-right: 5px;
     height: fit-content;
@@ -162,7 +190,7 @@ body .menu {
     display: none;
 }
 
-body .menu button {
+.menu button {
     width: fit-content;
     margin: 3px;
     padding: 3px;
@@ -174,14 +202,14 @@ body .menu button {
     display: flex;
 }
 
-body .menu button:hover {
+.menu button:hover {
     background-color: rgba(255, 255, 255, .3);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .4);
     border: none;
     transform: 3.5s;
 }
 
-body .menu button img {
+.menu button img {
     width: 20px;
     margin: 2px;
     height: auto;
@@ -189,4 +217,14 @@ body .menu button img {
 }
 #history{
     color: white;
+}
+.ellipse-bg{
+    background-color: #A160FB;
+    width: 350px;
+    height: 350px;
+    left: 45%;
+    position: absolute;
+    transform: skewX(-10deg) translate(100px,-90px);
+    z-index: -1;
+    border-radius: 50%;
 }

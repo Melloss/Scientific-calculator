@@ -37,13 +37,13 @@ var menu = () => {
                 div.style.display = "block";
                 div = document.getElementById("container");
                 div.style.transition = "3s";
-                div.style.margin = "20px auto 20px 0";
+                div.style.margin = "80px auto 20px 0";
                 menuOpen = 1;
             } else {
                 var div = document.getElementById("menu");
                 div.style.display = "none";
                 div = document.getElementById("container");
-                div.style.margin = "20px auto";
+                div.style.margin = "80px auto";
                 menuOpen = 0;
             }
     }  

@@ -21,11 +21,14 @@
             <li><button><img src="image/20.png"> date</button></li>
         </ul>
     </div>
+    <div class="ellipse-bg">Some</div>
     <div class="container" id="container">
+        
         <div class="upper">
             <div class="icon-bar">
                 <div class="icon">
-                    <button onclick="menu()"><img src="image/7.png" ><span id="std">Standard</span></button>
+                    <button onclick="menu()"><img src="image/7.png" >
+                        <span id="std">Standard</span></button>
                 </div>
                 <div class="logo">
                     <img src="image/12.png" id="logoImg">
@@ -41,7 +44,7 @@
                     <button name="m+" class="mini-buttons">M+</button>
                     <button name="m-" class="mini-buttons">M-</button>
                     <button name="ms" class="mini-buttons">MS</button>
-                    <button name="mc" class="mini-buttons">MC<sup>.</sup></button>
+                    <button name="mc" id="mc" class="mini-buttons">MC<sup>.</sup></button>
                 </div>
             </div>
             <div class="button-area">
@@ -49,7 +52,7 @@
                     <div class="row2">
                         <button name="modulo" calss="large-button" onclick="append('%')">%</button>
                         <button name="ce" calss="large-button" onclick="backSpace()">CE</button>
-                        <button name="ac" calss="large-button" onclick="clean()">AC</button>
+                        <button name="ac" calss="large-button" id="ac-btn" onclick="clean()">AC</button>
                         <button name="division" calss="large-button" onclick="append('/')">/</button>
                     </div>
                 </div>
@@ -76,7 +79,7 @@
                         <button name="number" class="large-button histry" onclick="getHistory()" >History</button>
                         <button name="number" class="large-button" onclick="append(0)">0</button>
                         <button name="number" class="large-button" onclick="append('.')">.</button>
-                        <button name="number" class="large-button" onclick="calculate()" onkeydown="calculate()">=</button>
+                        <button name="number" class="large-button" id="equal-sign" onclick="calculate()" onkeydown="calculate()">=</button>
                     </div>
                 </div>
             </div>
@@ -85,7 +88,7 @@
     <div id="history">
 
     </div>
-    <button onclick="changeColor()">click to change color</button>
+   <!-- <button onclick="changeColor()">click to change color</button> -->
 </body>
 
 </html>
