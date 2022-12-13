@@ -5,7 +5,7 @@ var append = (msg) => {
 }
 var backSpace = () => {
     var div = document.getElementById("screen");
-    var arr = Array.from(div.innerHTML);
+    var arr = Array.from(div.value);
     arr.pop();
     var str = arr.join("");
     div.value = str;
@@ -48,54 +48,68 @@ var menu = () => {
             }
     }  
 //calculation part   
-let num1="";
-let op='';
-let snum2="";
-let num2="";
+
 function calculate(){
-    let isFound=false;
-    let statement = document.getElementById('screen').value;
-    for(let i in statement){
-        if(statement.charAt(i)=='*'||statement.charAt(i)=='/'||statement.charAt(i)=='+'||statement.charAt(i)=='-'){
-            isFound=true;
-            num1=statement.slice(0,i);
-            op = statement.charAt(i);
-            snum2=statement.slice(i);
-            num2=snum2.slice(1);
-            break;
+    let op1,op2,Sn1,Sn2,value,lastoperator,n1,n2,equation;
+    let offset=0,isfirst=true;
+    equation=document.getElementById('screen').value;
+    for(var k in equation){
+        if(equation.charAt(k)=='*'||equation.charAt(k)=='/'||equation.charAt(k)=='+'||equation.charAt(k)=='-'||equation.charAt(k)=='%'){
+            lastoperator=equation.charAt(k);
         }
-        
     }
-    if(isFound){
-        n1=parseFloat(num1);
-        n2=parseFloat(num2);
+    equation=equation+lastoperator;
+    if(equation.charAt(0)=='='){
+        //This is used to calculate equation from answer
+        equation = equation.substr(1,equation.length);
     }
-    switch(op)
-    {
-        case '*':
-            document.getElementById('screen').value = " ="+(n1*n2);
-            setCookie(num1.concat(" * ",num2),(n1*n2),1);
-            break;
-        case '/':
-            document.getElementById('screen').value = " ="+(n1/n2);
-            setCookie(num1.concat(" / ",num2),(n1/n2),1);
-            break;    
-        case '-':
-           document.getElementById('screen').value = " ="+(n1-n2);
-           setCookie(num1.concat(" - ",num2),(n1-n2),1);
-            break; 
-        case '+':
-            document.getElementById('screen').value = " ="+(n1+n2);
-            setCookie(num1.concat(" + ",num2),(n1+n2),1);
-            break;
-        default:
-            document.getElementById('screen').value = " Syntax Error!";
+    for(let i=0;i<equation.length;i++){
+        if(equation.charAt(i)=='*'||equation.charAt(i)=='/'||equation.charAt(i)=='+'||equation.charAt(i)=='-'||equation.charAt(i)=='-'||equation.charAt(i)=='%'){
+            op1=equation.charAt(i);
+            Sn1=equation.substr(offset,(i-offset));
+            n1=parseFloat(Sn1);
+            if(!isfirst){
+                if (op2 == '*') value = value * n1;
+                else if (op2 == '+') value = value + n1;
+                else if (op2 == '-') value = value - n1;
+                else if (op2 == '/') value = value / n1;
+                else if (op2 == '%') value = n1 % n2;  
+            }
+            for(let j=i+1; j<equation.length;j++){
+                if(equation.charAt(j)=='*'||equation.charAt(j)=='/'||equation.charAt(j)=='+'||equation.charAt(j)=='-'||equation.charAt(j)=='-'||equation.charAt(j)=='%'){
+                    op2 = equation.charAt(j);
+                    if(isfirst){
+                        Sn2 = equation.substr(i+1,(j-i-1));
+                        n2=parseFloat(Sn2);
+                        if(op1 == '*') value = n1 * n2;        
+                        else if(op1 == '/') value = n1 / n2;
+                        else if(op1 == '+') value = n1 + n2;
+                        else if(op1 == '-') value = n1 - n2;  
+                        else if(op1 == '%') value = n1 % n2;   
+                        offset = j+1;
+                        i=j+1;
+                        isfirst=false;
+                        break;
+                    }
+                    offset=i+1;
+                    i=i+1;
+                    break;
+                }
+            }
+        }
     }
+    document.getElementById('screen').value = "="+(value);
+    if(equation.charAt(0)=='='){
+        //if it is from answer it should remove the '=' sign
+        setCookie(equation.substr(1,(equation.length-1)),value,1);
+    }
+    else setCookie(equation.substr(0,(equation.length-1)),value,1);
 }
-var i=0;// if it is even it displays history and if it is odd it hides the history
+var i=0;
 function getHistory(){
     if(i%2==0){
         document.getElementById('history').innerHTML = getCookies();
+        document.getElementById('history').style.display="block";
     }
     else hideHistory();
     i++;
@@ -122,5 +136,5 @@ function clearCookie(){
     // }
 }
 function hideHistory(){
-    document.location.reload();
+    document.getElementById('history').style.display="none";
 }
