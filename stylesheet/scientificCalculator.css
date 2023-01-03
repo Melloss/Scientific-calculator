@@ -39,6 +39,7 @@ body {
     border-radius: 30px;
     box-shadow: 0 0 15px 10px rgba(0, 0, 0, .5);
     background-attachment: fixed;
+    z-index: 1000;
 }
 
 .icon-bar {
@@ -95,15 +96,27 @@ body {
 
 .screen {
     width: 100%;
-    min-height: 200px;
+    min-height: 150px;
     position: relative;
-    box-shadow: 0 10px 10px -8px rgb(0 0 0);
-    border-radius: 0 0 10px 10px;
-    text-align: center;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 100px;
     font-size: larger;
     background-color: #191919;
     color: rgba(156, 87, 147, 0.9);
     border-width: 0px;
+}
+.result{
+    display: block;
+    min-height: 50px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 0 0 10px 10px;
+    text-align: right;
+    padding-right: 30px;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0);
 }
 
 .buuton-filed {
@@ -201,33 +214,43 @@ body {
     margin-left: auto;
     margin-right: 5px;
     height: fit-content;
-    padding: 10px;
     background-attachment: fixed;
     line-height: 30px;
     background-color: rgb(39, 37, 37);
     box-shadow: 0 0 15px 10px rgba(0, 0, 0, .5);
-    border-radius: 30px 0 30px 30px;
-    margin: 40px 0;
-    transition: opacity 1000ms;
+    border-radius: 30px 0 0 30px;
+    margin: 40px 2px;
+    transition: opacity 500ms;
+    overflow: hidden;
+}
+.menu ul li{
+    list-style: none;
+    border-bottom: 1px solid #141414;
+    padding: 0px;
+    cursor: pointer;
 }
 
 .menu button {
     width: fit-content;
-    margin: 3px;
-    padding: 3px;
+    padding: 9px 20px;
     background-color: transparent;
     color: rgba(184, 122, 28, 0.9);
     border: none;
-    border: 0.5px solid rgba(255, 255, 255, .6);
     border-radius: 5px;
     display: flex;
+    line-height: 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-space{
+    padding: 0px 5px;
 }
 
-.menu button:hover {
+.menu ul li:hover {
     background-color: rgba(255, 255, 255, .3);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .4);
-    border: none;
-    transform: 3.5s;
+    
+    
 }
 
 .menu button img {
@@ -239,7 +262,8 @@ body {
 
 #history {
     width: 300px;
-    height: fit-content;
+    height:600px;
+    overflow-y: scroll;
     position: relative;
     right: 0;
     margin: 0 auto;
@@ -261,11 +285,12 @@ body {
     height: 350px;
     left: 45%;
     position: absolute;
-    transform: skewX(-10deg) translate(100px, -90px);
+    transform: skewX(-10deg) translate(70px, -120px);
     z-index: -1;
     border-radius: 50%;
 }
 
 .hidden {
     opacity: 0;
+    visibility: hidden;
 }

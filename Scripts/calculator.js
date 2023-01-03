@@ -13,6 +13,7 @@ var backSpace = () => {
 var clean = () => {
     var div = document.getElementById("screen");
     div.value = "";
+    document.getElementById("result").innerHTML = "0";
 }
 var changeColor = () => {
     var div = document.getElementById("container");
@@ -97,11 +98,14 @@ function calculate() {
             }
         }
     }
-    document.getElementById('screen').value = "=" + (value);
+    document.getElementById("result").innerHTML = value;
+    equation =  document.getElementById('screen').value = "" + (value);
+    
     if (equation.charAt(0) == '=') {
         //if it is from answer it should remove the '=' sign
         setCookie(equation.substr(1, (equation.length - 1)), value, 1);
     } else setCookie(equation.substr(0, (equation.length - 1)), value, 1);
+    
 }
 var i = 0;
 
