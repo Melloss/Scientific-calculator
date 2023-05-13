@@ -1,3 +1,3 @@
 # -Scientific-calculator
 Sceintific calculator on web
-This Web is used to calculate Scientific Equations 
+Host link: https://melloss.github.io/Scientific-calculator/
